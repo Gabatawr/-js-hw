@@ -30,6 +30,10 @@ body {
   font-family: var.$font-family-primary;
 }
 
+a:visited {
+  color: inherit;
+}
+
 img {
   max-width: 100%;
   height: auto;
