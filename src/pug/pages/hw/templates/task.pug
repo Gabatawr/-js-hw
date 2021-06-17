@@ -1,0 +1,10 @@
+block task-variables
+  - const taskTitleDefault = 'Task'
+  - const taskClassDefault = ''
+
+block task
+  details.task(open)
+    summary.task__title= taskTitle ? taskTitle : taskTitleDefault
+    .task__content(class= taskClass ? taskClass : '')
+      block task-content
+

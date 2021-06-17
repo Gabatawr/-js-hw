@@ -1,0 +1,10 @@
+extends ../../templates/task.pug
+
+block task-variables
+  - const taskTitle = 'Task 1 - Factorial'
+  - const taskClass = 'task-1'
+
+block task-content
+  input.task__textbox(type='number', placeholder='number', value='5')
+  button.task__btn calc
+  input.task__result(type='number', placeholder='result', readonly)
