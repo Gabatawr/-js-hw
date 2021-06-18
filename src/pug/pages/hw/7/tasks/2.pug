@@ -1,0 +1,15 @@
+include ../../templates/task.pug
+
+- const t2_randomValue = Math.floor(Math.random() * 100 + 1)
+- const t2_config = { type: 'range', step: 1, min: 0 }
+
++task('task-2', 'Task 2')
+  .task-2__input
+    input.task-2__range-min(value=t2_randomValue / 2, max=t2_randomValue)&attributes(t2_config)
+    label.task-2__label-min
+  .task-2__input
+    input.task-2__range-max(value=t2_randomValue, max=t2_randomValue * 2)&attributes(t2_config)
+    label.task-2__label-max
+  button.task-2__btn-asc(type='button') ascending
+  button.task-2__btn-desc(type='button') descending
+  .task-2__result result

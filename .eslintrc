@@ -16,6 +16,12 @@
       }
     ],
     "no-console": "off",
-    "allowForLoopAfterthoughts": 0
+    "allowForLoopAfterthoughts": 0,
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ]
   }
 }

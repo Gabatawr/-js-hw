@@ -8,7 +8,7 @@ documentReady(() => {
     .querySelector('.menu__list')
     .querySelectorAll('.menu__link')
     .forEach((a) => {
-      if (window.location.href.includes(a.href)) {
+      if (window.location.href === a.href) {
         a.classList.add('menu__link--active');
 
         if (a.href.includes('hw')) {

@@ -1,10 +1,5 @@
-block task-variables
-  - const taskTitleDefault = 'Task'
-  - const taskClassDefault = ''
-
-block task
+mixin task(taskClass, taskTitle)
   details.task(open)
-    summary.task__title= taskTitle ? taskTitle : taskTitleDefault
-    .task__content(class= taskClass ? taskClass : '')
-      block task-content
-
+    summary.task__title= taskTitle ? taskTitle : ''
+    form.task__form(class= taskClass ? taskClass : '')
+      block

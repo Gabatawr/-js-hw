@@ -1,10 +1,8 @@
-extends ../../templates/task.pug
+include ../../templates/task.pug
 
-block task-variables
-  - const taskTitle = 'Task 1 - Factorial'
-  - const taskClass = 'task-1'
+- const t1_randomValue = Math.floor(Math.random() * 10 + 1)
 
-block task-content
-  input.task__textbox(type='number', placeholder='number', value='5')
-  button.task__btn calc
-  input.task__result(type='number', placeholder='result', readonly)
++task('task-1', 'Task 1 - Factorial')
+  input.task-1__textbox(type='number', placeholder='number', value=t1_randomValue)
+  button.task-1__btn(type='button') calc
+  input.task-1__result(type='number', placeholder='result', readonly)
