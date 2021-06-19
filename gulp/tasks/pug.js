@@ -6,7 +6,7 @@ import pugGlob from 'pug-include-glob';
 import { setup as emittySetup } from '@zoxon/emitty';
 import config from '../config';
 
-const emittyPub = emittySetup(
+const emittyPug = emittySetup(
   config.src.pug,
   'pug',
   { makeVinylFile: true },
@@ -24,13 +24,20 @@ export const pugBuild = () => (
     .pipe(
       gulpif(
         global.isPugWatch,
-        emittyPub.stream(
+        emittyPug.stream(
           global.emittyChangedFile.path,
           global.emittyChangedFile.stats,
         ),
       ),
     )
-    .pipe(pug({ pretty: config.isDev, plugins: [pugGlob()] }))
+    .pipe(pug({
+      pretty: config.isDev,
+      plugins: [pugGlob()],
+      locals: {
+        isProd: config.isProd,
+        repName: config.repName,
+      },
+    }))
     .pipe(gulp.dest(`${config.dest.html}`))
 );
 
