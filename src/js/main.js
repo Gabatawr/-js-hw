@@ -11,7 +11,7 @@ documentReady(() => {
       if (window.location.href === a.href) {
         a.classList.add('menu__link--active');
 
-        if (a.href.includes('hw')) {
+        if (a.href.includes('/hw')) {
           init[a.href.substring(a.href.lastIndexOf('/') + 1).replace('.html', '')]();
         }
       }

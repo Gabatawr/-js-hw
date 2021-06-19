@@ -1,5 +1,8 @@
+import { repository } from '../package.json';
+
+const repName = repository.url.substring(repository.url.lastIndexOf('/') + 1).replace('.git', '') ?? '';
 const srcPath = 'src';
-const destPath = 'build';
+const destPath = `${repName}/build`;
 
 const config = {
   src: {

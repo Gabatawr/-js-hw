@@ -1,7 +1,7 @@
 {
-  "name": "gulp-build_v2",
+  "name": "-js-hw",
   "version": "1.0.0",
-  "description": "",
+  "description": "gulp build v2",
   "scripts": {
     "prepare": "npx husky install",
     "dev": "gulp watch",
@@ -14,7 +14,7 @@
     "*.scss": "stylelint"
   },
   "eslintIgnore": [
-    "/build/**/*.js"
+    "/**/build/**/*.js"
   ],
   "keywords": [
     "gulp",
@@ -31,6 +31,10 @@
   ],
   "author": "Gabatawr",
   "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gabatawr/-js-hw.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.4",
