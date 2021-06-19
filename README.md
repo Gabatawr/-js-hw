@@ -1,1 +1,1 @@
-#### [open in web](https://gabatawr.github.io/-js-hw/build/index.html)
+#### [open in web](https://gabatawr.github.io/-js-hw/index.html)
