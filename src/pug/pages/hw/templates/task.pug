@@ -1,5 +1,5 @@
 mixin task(taskClass, taskTitle)
   details.task(open)
     summary.task__title= taskTitle ? taskTitle : ''
-    form.task__form(class= taskClass ? taskClass : '')
+    .task__content(class= taskClass ? taskClass : '')
       block

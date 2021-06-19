@@ -5,13 +5,13 @@ import documentReady from '../../../helpers/documentReady';
 //   в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
 
 const taskRun = () => {
-  const form = document.querySelector('.task-2');
-  if (form === null) return;
-  const rangeMin = form.querySelector('.task-2__range-min');
-  const labelMin = form.querySelector('.task-2__label-min');
-  const rangeMax = form.querySelector('.task-2__range-max');
-  const labelMax = form.querySelector('.task-2__label-max');
-  const result = form.querySelector('.task-2__result');
+  const task = document.querySelector('.task-2');
+  if (task === null) return;
+  const rangeMin = task.querySelector('.task-2__range-min');
+  const labelMin = task.querySelector('.task-2__label-min');
+  const rangeMax = task.querySelector('.task-2__range-max');
+  const labelMax = task.querySelector('.task-2__label-max');
+  const result = task.querySelector('.task-2__result');
 
   const rangeNumbers = (a, b, acc = []) => {
     if (a === b) {
@@ -41,20 +41,14 @@ const taskRun = () => {
 
   new Map([
     ['asc', {
-      btn: form.querySelector('.task-2__btn-asc'),
-      handler: () => {
-        result.textContent = ascHandler().toString();
-      },
+      btn: task.querySelector('.task-2__btn-asc'),
+      handler() { result.textContent = ascHandler(); },
     }],
     ['dest', {
-      btn: form.querySelector('.task-2__btn-desc'),
-      handler: () => {
-        result.textContent = descHandler().toString();
-      },
+      btn: task.querySelector('.task-2__btn-desc'),
+      handler() { result.textContent = descHandler(); },
     }],
-  ]).forEach((v) => {
-    v.btn.addEventListener('click', v.handler);
-  });
+  ]).forEach((v) => v.btn.addEventListener('click', v.handler));
 };
 
 export default () => documentReady(taskRun);
