@@ -3,7 +3,7 @@ import config from '../config';
 
 const server = (callback) => {
   browserSync.create().init({
-    server: ['./', config.dest.root],
+    server: config.dest.root,
     files: [
       `${config.dest.html}/*.html`,
       `${config.dest.css}/*.css`,

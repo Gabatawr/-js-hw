@@ -14,7 +14,7 @@
     "*.scss": "stylelint"
   },
   "eslintIgnore": [
-    "/**/build/**/*.js"
+    "docs/**/*.js"
   ],
   "keywords": [
     "gulp",

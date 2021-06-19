@@ -1,8 +1,9 @@
 import { repository } from '../package.json';
 
+// eslint-disable-next-line no-unused-vars
 const repName = repository.url.substring(repository.url.lastIndexOf('/') + 1).replace('.git', '') ?? '';
 const srcPath = 'src';
-const destPath = `${repName}/build`;
+const destPath = 'docs';
 
 const config = {
   src: {
