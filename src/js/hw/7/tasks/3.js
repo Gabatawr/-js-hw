@@ -57,10 +57,16 @@ const taskRun = (taskOpen) => {
   btn.addEventListener('click', () => {
     result.value = reverseNumber(number.value);
   });
+  // #endregion buttonEvent
+
+  // #region inputEvent
+  number.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) btn.click();
+  });
+  // #endregion inputEvent
 
   // AUTOTEST:
   btn.click();
-  // #endregion buttonEvent
 };
 
 export default (open) => documentReady(taskRun, open);

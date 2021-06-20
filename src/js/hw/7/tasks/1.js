@@ -20,13 +20,18 @@ const taskRun = (taskOpen) => {
 
   // #region buttonEvent
   btn.addEventListener('click', () => {
-    result.value = factorialCalc(Number.parseInt(number.value, 10));
+    result.value = factorialCalc(+number.value);
   });
+  // #endregion buttonEvent
+
+  // #region inputEvent
+  number.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) btn.click();
+  });
+  // #endregion inputEvent
 
   // AUTOTEST:
   btn.click();
-
-  // #endregion buttonEvent
 };
 
 export default (open) => documentReady(taskRun, open);
