@@ -5,20 +5,28 @@ import documentReady from '../../../helpers/documentReady';
 
 const factorialCalc = (num) => (num <= 1 ? 1 : num * factorialCalc(num - 1));
 
-const taskRun = () => {
-  const taskElement = document.querySelector('.task-1');
-  if (taskElement === null) return;
+const taskRun = (taskOpen) => {
+  // #region Init
+  const task = document.querySelector('.task-1');
+  if (task === null) return;
+  task.open = taskOpen;
 
-  const textboxElement = taskElement.querySelector('.task-1__textbox');
-  const btnElement = taskElement.querySelector('.task-1__btn');
-  const resultElement = taskElement.querySelector('.task-1__result');
+  const number = task.querySelector('.task-1__textbox');
+  number.value = Math.floor(Math.random() * 10 + 1);
 
-  btnElement.addEventListener('click', () => {
-    resultElement.value = factorialCalc(Number.parseInt(textboxElement.value, 10));
+  const btn = task.querySelector('.task-1__btn');
+  const result = task.querySelector('.task-1__result');
+  // #endregion Init
+
+  // #region buttonEvent
+  btn.addEventListener('click', () => {
+    result.value = factorialCalc(Number.parseInt(number.value, 10));
   });
 
-  // TEST:
-  btnElement.click();
+  // AUTOTEST:
+  btn.click();
+
+  // #endregion buttonEvent
 };
 
-export default () => documentReady(taskRun);
+export default (open) => documentReady(taskRun, open);

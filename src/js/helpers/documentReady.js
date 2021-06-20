@@ -1,7 +1,7 @@
-export default (f) => {
+export default (f, ...args) => {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', f);
+    document.addEventListener('DOMContentLoaded', () => f(...args));
   } else {
-    f();
+    f(...args);
   }
 };

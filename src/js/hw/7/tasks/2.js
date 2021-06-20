@@ -4,27 +4,42 @@ import documentReady from '../../../helpers/documentReady';
 // 2.Написать функцию, которая выводит все числа из заданного пользователем диапазона
 //   в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
 
-const taskRun = () => {
+const rangeNumbers = (a, b, acc = []) => {
+  if (a === b) {
+    acc.push(b);
+    return acc;
+  }
+  acc.push(a);
+  return rangeNumbers(a + 1, b, acc);
+};
+
+const taskRun = (taskOpen) => {
+  // #region Init
   const task = document.querySelector('.task-2');
   if (task === null) return;
+  task.open = taskOpen;
+
+  const rand = Math.floor(Math.random() * 100 + 1);
+
   const rangeMin = task.querySelector('.task-2__range-min');
-  const labelMin = task.querySelector('.task-2__label-min');
+  rangeMin.value = rand / 2;
+  rangeMin.max = rand;
+
   const rangeMax = task.querySelector('.task-2__range-max');
+  rangeMax.value = rand;
+  rangeMax.max = rand * 2;
+
+  const labelMin = task.querySelector('.task-2__label-min');
   const labelMax = task.querySelector('.task-2__label-max');
   const result = task.querySelector('.task-2__result');
+  // #endregion Init
 
-  const rangeNumbers = (a, b, acc = []) => {
-    if (a === b) {
-      acc.push(b);
-      return acc;
-    }
-    acc.push(a);
-    return rangeNumbers(a + 1, b, acc);
-  };
-
+  // #region Closures
   const ascHandler = () => rangeNumbers(+rangeMin.value, +rangeMax.value);
   const descHandler = () => ascHandler().reverse();
+  // #endregion Closures
 
+  // #region inputEvent
   new Map([
     ['min', { range: rangeMin, label: labelMin }],
     ['max', { range: rangeMax, label: labelMax }],
@@ -38,32 +53,29 @@ const taskRun = () => {
       }
     });
   });
+  // #endregion inputEvent
 
+  // #region buttonEvent
   new Map([
     ['asc', {
       btn: task.querySelector('.task-2__btn-asc'),
       handler() { result.textContent = ascHandler(); },
+      testTimeout: 1000,
     }],
     ['dest', {
       btn: task.querySelector('.task-2__btn-desc'),
       handler() { result.textContent = descHandler(); },
+      testTimeout: 3000,
     }],
-  ]).forEach((v) => v.btn.addEventListener('click', v.handler));
+  ]).forEach((v) => {
+    v.btn.addEventListener('click', v.handler);
+
+    // AUTOTEST:
+    task.parentNode.addEventListener('click', () => {
+      setTimeout(() => v.btn.click(), v.testTimeout);
+    }, { once: true });
+  });
+  // #endregion buttonEvent
 };
 
-export default () => documentReady(taskRun);
-
-/*
-// 3.Написать функцию, которая выводит переданное ей число задом наперед.
-//   Например: число 1234 вывести как 4321.
-
-//
-
-// 4.Написать функцию, которая считает сумму цифр числа.
-//   Например: число 1357, сумма 1 + 3 + 5 + 7 = 16.
-
-//
-
-// 5.Написать функцию, которая принимает число и выводит соответствующее количество
-//   вложенных пар круглых скобок. Например: число 4 – (((()))).
-*/
+export default (open) => documentReady(taskRun, open);

@@ -3,6 +3,7 @@ import hw7 from './hw/7/index';
 
 const init = { hw7 };
 
+// #region linkActive
 documentReady(() => {
   document
     .querySelector('.menu__list')
@@ -17,3 +18,4 @@ documentReady(() => {
       }
     });
 });
+// #endregion linkActive

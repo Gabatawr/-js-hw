@@ -1,0 +1,9 @@
+@use '7/hw7' as hw7;
+
+.task {
+  margin-top: 24px;
+
+  &__title {
+    font-size: 24px;
+  }
+}

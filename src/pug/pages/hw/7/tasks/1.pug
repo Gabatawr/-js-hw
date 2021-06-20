@@ -1,8 +1,6 @@
 include ../../templates/task.pug
 
-- const t1_randomValue = Math.floor(Math.random() * 10 + 1)
-
 +task('task-1', 'Task 1 - Factorial')
-  input.task-1__textbox(type='number', placeholder='number', value=t1_randomValue)
+  input.task-1__textbox(type='number', placeholder='number')
   button.task-1__btn(type='button') calc
   input.task-1__result(type='number', placeholder='result', readonly)
