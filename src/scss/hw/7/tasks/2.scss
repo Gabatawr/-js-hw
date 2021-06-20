@@ -20,6 +20,13 @@
   }
 
   input[type=range] {
-    margin: 6px 12px;
+    margin: 6px 0;
+  }
+
+  span,
+  label {
+    width: 55px;
+
+    text-align: center;
   }
 }

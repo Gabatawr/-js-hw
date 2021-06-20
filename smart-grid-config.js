@@ -3,7 +3,7 @@ module.exports = {
   outputStyle: 'scss',
   columns: 12,
   offset: '20px',
-  mobileFirst: true,
+  mobileFirst: false,
   container: {
     maxWidth: '1200px',
     fields: '20px',
