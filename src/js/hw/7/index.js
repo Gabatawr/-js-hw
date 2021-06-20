@@ -5,9 +5,9 @@ import t4 from './tasks/4';
 import t5 from './tasks/5';
 
 export default () => {
-  t1(true);
-  t2(true);
-  t3(true);
-  t4(true);
-  t5(true);
+  t1();
+  t2();
+  t3();
+  t4();
+  t5();
 };
