@@ -59,13 +59,13 @@ const taskRun = (taskOpen) => {
   new Map([
     ['asc', {
       btn: task.querySelector('.task-2__btn-asc'),
-      handler() { result.textContent = ascHandler(); },
-      testTimeout: 1000,
+      handler() { result.textContent = ascHandler().join(', '); },
+      testTimeout: 500,
     }],
     ['dest', {
       btn: task.querySelector('.task-2__btn-desc'),
-      handler() { result.textContent = descHandler(); },
-      testTimeout: 3000,
+      handler() { result.textContent = descHandler().join(', '); },
+      testTimeout: 2500,
     }],
   ]).forEach((v) => {
     v.btn.addEventListener('click', v.handler);

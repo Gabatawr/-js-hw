@@ -12,7 +12,8 @@ html(lang='ru')
     block header
       include ../parts/header.pug
 
-    block content
+    main.main.wrapper
+      block content
 
     block scripts
       script(src='js/main.min.js?v=' + siteVersion)

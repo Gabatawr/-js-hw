@@ -1,9 +1,51 @@
 @use '7/hw7' as hw7;
 
 .task {
+  width: 600px;
   margin-top: 24px;
+  padding: 12px;
+
+  background-color: rgb(226, 226, 226);
+  border-radius: 12px;
 
   &__title {
     font-size: 24px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 6px 0;
+  }
+}
+
+input[type=number],
+input[type=text] {
+  padding: 6px;
+  padding-left: 12px;
+
+  border: none;
+  border-radius: 12px;
+}
+
+button[type=button] {
+  margin: 1px 0;
+  padding: 6px;
+
+  background-color: rgb(150, 201, 248);
+
+  border: none;
+  border-radius: 12px;
+
+  &:hover {
+    color: white;
+
+    background-color: rgb(99, 99, 99);
+  }
+
+  &:active {
+    color: rgb(150, 201, 248);
   }
 }

@@ -6,3 +6,7 @@
 @use 'layout';
 @use 'components';
 @use 'hw/base';
+
+.wrapper {
+  @include grid.wrapper;
+}
