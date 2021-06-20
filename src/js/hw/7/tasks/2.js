@@ -71,7 +71,7 @@ const taskRun = (taskOpen) => {
     v.btn.addEventListener('click', v.handler);
 
     // AUTOTEST:
-    task.parentNode.addEventListener('click', () => {
+    task.addEventListener('click', () => {
       setTimeout(() => v.btn.click(), v.testTimeout);
     }, { once: true });
   });

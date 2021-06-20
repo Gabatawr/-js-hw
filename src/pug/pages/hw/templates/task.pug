@@ -1,5 +1,5 @@
 mixin task(taskClass, taskTitle)
-  details.task()(class= taskClass ? taskClass : '')
+  details.task(class= taskClass ? taskClass : '')
     summary.task__title= taskTitle ? taskTitle : ''
     .task__content
       block
