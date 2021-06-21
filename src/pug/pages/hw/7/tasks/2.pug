@@ -2,16 +2,16 @@ include ../../templates/task.pug
 
 - const t2_config = { type: 'range', step: 1, min: 0 }
 
-+task('task-2', 'Task 2 - Range numbers')
-  .task-2__wrapper
-    .task-2__input
++task('task-7-2', 'Task 2 - Range numbers')
+  .task-7-2__wrapper
+    .task-7-2__input
       span min
-      input.task-2__range-min()&attributes(t2_config)
-      label.task-2__label-min
-    .task-2__input
+      input.task-7-2__range-min()&attributes(t2_config)
+      label.task-7-2__label-min
+    .task-7-2__input
       span max
-      input.task-2__range-max()&attributes(t2_config)
-      label.task-2__label-max
-  button.task-2__btn-asc(type='button') ascending
-  button.task-2__btn-desc(type='button') descending
-  .task-2__result result
+      input.task-7-2__range-max()&attributes(t2_config)
+      label.task-7-2__label-max
+  button.task-7-2__btn-asc(type='button') ascending
+  button.task-7-2__btn-desc(type='button') descending
+  .task-7-2__result result

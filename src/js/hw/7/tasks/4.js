@@ -13,14 +13,14 @@ const sumDigit = (num) => {
 
 const taskRun = (taskOpen) => {
   // #region Init
-  const task = document.querySelector('.task-4');
+  const task = document.querySelector('.task-7-4');
   if (task === null) return;
   task.open = taskOpen;
 
-  const number = task.querySelector('.task-4__textbox');
+  const number = task.querySelector('.task-7-4__textbox');
   number.value = Math.floor(Math.random() * 1000000 + 10);
-  const btn = task.querySelector('.task-4__btn');
-  const result = task.querySelector('.task-4__result');
+  const btn = task.querySelector('.task-7-4__btn');
+  const result = task.querySelector('.task-7-4__result');
   // #endregion Init
 
   // #region buttonEvent

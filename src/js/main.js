@@ -1,7 +1,8 @@
 import documentReady from './helpers/documentReady';
 import hw7 from './hw/7/index';
+import hw8 from './hw/8/index';
 
-const init = { hw7 };
+const init = { hw7, hw8 };
 
 // #region linkActive
 documentReady(() => {

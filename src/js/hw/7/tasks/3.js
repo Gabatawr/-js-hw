@@ -42,15 +42,15 @@ const reverseNumber = (num) => {
 
 const taskRun = (taskOpen) => {
   // #region Init
-  const task = document.querySelector('.task-3');
+  const task = document.querySelector('.task-7-3');
   if (task === null) return;
   task.open = taskOpen;
 
-  const number = task.querySelector('.task-3__textbox');
+  const number = task.querySelector('.task-7-3__textbox');
   number.value = Math.floor(Math.random() * 10000 + 10)
     + (Math.floor(Math.random() * 100) / 100); // decimal
-  const btn = task.querySelector('.task-3__btn');
-  const result = task.querySelector('.task-3__result');
+  const btn = task.querySelector('.task-7-3__btn');
+  const result = task.querySelector('.task-7-3__result');
   // #endregion Init
 
   // #region buttonEvent

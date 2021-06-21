@@ -13,14 +13,14 @@ const brackets = (num, acc = []) => {
 
 const taskRun = (taskOpen) => {
   // #region Init
-  const task = document.querySelector('.task-5');
+  const task = document.querySelector('.task-7-5');
   if (task === null) return;
   task.open = taskOpen;
 
-  const number = task.querySelector('.task-5__textbox');
+  const number = task.querySelector('.task-7-5__textbox');
   number.value = Math.floor(Math.random() * 10 + 1);
-  const btn = task.querySelector('.task-5__btn');
-  const result = task.querySelector('.task-5__result');
+  const btn = task.querySelector('.task-7-5__btn');
+  const result = task.querySelector('.task-7-5__result');
   // #endregion Init
 
   // #region buttonEvent
